@@ -130,7 +130,7 @@ def show_char_use(uchars, ucount):
 				# so on average each occurs 1/N times. A terminal window
 				# is 80 chars wide, which we equate to 4/N.
 				bar = "="*int(round(70.0/4.0*n*len(thischars)))
-				print " %s %s" % (c, bar)
+				print " %s %2.0f %s" % (c, n*100, bar)
 
 # Run main program, must be at end
 if __name__ == "__main__":
