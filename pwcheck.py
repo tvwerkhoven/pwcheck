@@ -50,9 +50,18 @@ def main():
 	# @todo Should include check of len(pwdbl) and len(pwdbl[0])
 	assert len(pwdbl) == len(set(pwdbl)), "Duplicate passwords found!"
 
-	# Check spread of characterset
+	# Check spread of characterset globally
 	uchars, ucount = count_chars(pwdb)
 	show_char_use(uchars, ucount)
+
+	# Check spread of characterset per position
+	pwlen = len(pwdbl[0])
+	for p in range(pwlen):
+		print "Position %d" % p
+		pwdbsub = pwdb[p::pwlen]
+		uchars, ucount = count_chars(pwdbsub)
+		show_char_use(uchars, ucount)
+		
 	raw_input("Press key to quit...")
 
 def parsopts():
